@@ -1,12 +1,14 @@
-// FoodTrack frontend prototype. Backend integration will be added in the next phase.
+// ==========================================
+// FOODTRACK - APPLICATION INITIALIZATION
+// ==========================================
 
-// ───── Boot ─────
-(function boot(){
-  const u=DB.get('cur_user',null);
-  if(u){
-    $('login-screen').style.display='none';
-    $('app').style.display='block';
-    $('user-label').textContent=u.role;
-    nav('dashboard');
-  }
+(async function boot() {
+
+    console.log("FoodTrack: Initializing application...");
+
+    // Restore Supabase authentication session
+    await restoreAuthSession();
+
+    console.log("FoodTrack: Application initialized!");
+
 })();
