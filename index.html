@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#14532d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="FoodTrack helps hostel and canteen teams track food inventory, expiry dates and waste.">
   <title>FoodTrack — Expiry &amp; Waste Manager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,11 +31,11 @@
       <h3 style="font-size:17px;font-weight:700;text-align:center;margin:0 0 5px">Welcome back</h3>
       <div>
         <label>Email</label>
-        <input id="l-email" type="email" placeholder="email@college.edu">
+        <input id="l-email" type="email" placeholder="email@college.edu" autocomplete="email" inputmode="email">
       </div>
       <div>
         <label>Password</label>
-        <input id="l-pass" type="password" placeholder="Enter your password">
+        <input id="l-pass" type="password" placeholder="Enter your password" autocomplete="current-password">
       </div>
       <button class="btn-primary" style="width:100%;padding:11px" onclick="doLogin()">Sign In</button>
       <p style="font-size:13px;color:var(--tx2);text-align:center;margin:5px 0 0">
@@ -46,19 +49,19 @@
       <h3 style="font-size:17px;font-weight:700;text-align:center;margin:0 0 5px">Create Account</h3>
       <div>
         <label>Full Name</label>
-        <input id="r-name" type="text" placeholder="Enter your full name">
+        <input id="r-name" type="text" placeholder="Enter your full name" autocomplete="name">
       </div>
       <div>
         <label>Email</label>
-        <input id="r-email" type="email" placeholder="email@college.edu">
+        <input id="r-email" type="email" placeholder="email@college.edu" autocomplete="email" inputmode="email">
       </div>
       <div>
         <label>Password</label>
-        <input id="r-pass" type="password" placeholder="Minimum 8 characters">
+        <input id="r-pass" type="password" placeholder="Minimum 8 characters" autocomplete="new-password">
       </div>
       <div>
         <label>Confirm Password</label>
-        <input id="r-confirm" type="password" placeholder="Re-enter your password">
+        <input id="r-confirm" type="password" placeholder="Re-enter your password" autocomplete="new-password">
       </div>
       <button class="btn-primary" style="width:100%;padding:11px" onclick="doRegister()">Create Account</button>
       <p style="font-size:13px;color:var(--tx2);text-align:center;margin:5px 0 0">
@@ -94,7 +97,7 @@
       <span class="avatar" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span>
       <span style="flex:1;min-width:0">
         <span style="display:block;font-size:12px;color:rgba(255,255,255,.48)">Signed in as</span>
-        <span id="user-label" style="display:block;font-size:13px;font-weight:600;color:#fff"></span>
+        <span id="user-label" style="display:block;font-size:13px;font-weight:600;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
       </span>
     </div>
     <div style="padding:4px 0 14px">
@@ -104,8 +107,8 @@
   <button class="sidebar-scrim" id="sidebar-scrim" aria-label="Close navigation" onclick="toggleSidebar(false)"></button>
   <main class="main">
     <div class="mobile-topbar">
-      <button class="btn-ghost" style="padding:7px" aria-label="Open navigation" onclick="toggleSidebar()"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-      <strong style="font-size:15px;color:#14532d">FoodTrack</strong>
+      <button class="btn-ghost" style="padding:7px;min-height:36px" aria-label="Open navigation" onclick="toggleSidebar()"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <strong style="font-size:15px;color:#14532d;flex:1">FoodTrack</strong>
     </div>
     <div id="page"></div>
   </main>
@@ -127,11 +130,11 @@
 <script src="js/seed-data.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/navigation.js"></script>
-<script src="js/dashboard.js?v=2"></script>
-<script src="js/inventory.js?v=4"></script>
-<script src="js/waste-log.js?v=2"></script>
-<script src="js/reports.js?v=2"></script>
-<script src="js/donation.js?v=2"></script>
+<script src="js/dashboard.js?v=3"></script>
+<script src="js/inventory.js?v=5"></script>
+<script src="js/waste-log.js?v=3"></script>
+<script src="js/reports.js?v=3"></script>
+<script src="js/donation.js?v=3"></script>
 <script src="js/ui.js"></script>
 <script src="js/boot.js"></script>
 </body>
