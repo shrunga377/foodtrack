@@ -16,122 +16,97 @@
 <body>
 <!-- AUTHENTICATION -->
 <div id="login-screen" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg)">
-
   <div class="card" style="width:100%;max-width:400px;text-align:center">
-
-    <div style="font-size:40px;margin-bottom:8px">🌿</div>
-
-    <h1 style="font-size:22px;font-weight:700;color:#14532d;margin:0 0 4px">
-      FoodTrack
-    </h1>
-
-    <p style="color:var(--tx2);font-size:14px;margin:0 0 24px">
-      Hostel Food Expiry & Waste Manager
-    </p>
-
+    <div class="brand-mark" style="margin:0 auto 12px;background:#14532d;color:#fff;border:0">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-8 0-13 3.8-13 10a6 6 0 0 0 6 6c6.2 0 7-8 7-16Z"/><path d="M4 21c2-5 5-8 10-11"/></svg>
+    </div>
+    <h1 style="font-size:22px;font-weight:700;color:#14532d;margin:0 0 4px">FoodTrack</h1>
+    <p style="color:var(--tx2);font-size:14px;margin:0 0 24px">Hostel Food Expiry &amp; Waste Manager</p>
 
     <!-- LOGIN FORM -->
     <div id="login-form" style="text-align:left;display:flex;flex-direction:column;gap:14px">
-
-      <h3 style="font-size:17px;font-weight:700;text-align:center;margin:0 0 5px">
-        Welcome Back!
-      </h3>
-
+      <h3 style="font-size:17px;font-weight:700;text-align:center;margin:0 0 5px">Welcome back</h3>
       <div>
         <label>Email</label>
         <input id="l-email" type="email" placeholder="email@college.edu">
       </div>
-
       <div>
         <label>Password</label>
         <input id="l-pass" type="password" placeholder="Enter your password">
       </div>
-
-      <button class="btn-primary" style="width:100%;padding:11px"
-        onclick="doLogin()">
-        Sign In
-      </button>
-
+      <button class="btn-primary" style="width:100%;padding:11px" onclick="doLogin()">Sign In</button>
       <p style="font-size:13px;color:var(--tx2);text-align:center;margin:5px 0 0">
         New to FoodTrack?
-        <a href="#" onclick="switchAuthView('register');return false;"
-          style="color:#16a34a;font-weight:600;text-decoration:none">
-          Create Account
-        </a>
+        <a href="#" onclick="switchAuthView('register');return false;" style="font-weight:600;text-decoration:none">Create Account</a>
       </p>
-
     </div>
-
 
     <!-- REGISTRATION FORM -->
     <div id="register-form" style="display:none;text-align:left;flex-direction:column;gap:14px">
-
-      <h3 style="font-size:17px;font-weight:700;text-align:center;margin:0 0 5px">
-        Create Account
-      </h3>
-
+      <h3 style="font-size:17px;font-weight:700;text-align:center;margin:0 0 5px">Create Account</h3>
       <div>
         <label>Full Name</label>
         <input id="r-name" type="text" placeholder="Enter your full name">
       </div>
-
       <div>
         <label>Email</label>
         <input id="r-email" type="email" placeholder="email@college.edu">
       </div>
-
       <div>
         <label>Password</label>
         <input id="r-pass" type="password" placeholder="Minimum 8 characters">
       </div>
-
       <div>
         <label>Confirm Password</label>
         <input id="r-confirm" type="password" placeholder="Re-enter your password">
       </div>
-
-      <button class="btn-primary" style="width:100%;padding:11px"
-        onclick="doRegister()">
-        Create Account
-      </button>
-
+      <button class="btn-primary" style="width:100%;padding:11px" onclick="doRegister()">Create Account</button>
       <p style="font-size:13px;color:var(--tx2);text-align:center;margin:5px 0 0">
         Already have an account?
-        <a href="#" onclick="switchAuthView('login');return false;"
-          style="color:#16a34a;font-weight:600;text-decoration:none">
-          Sign In
-        </a>
+        <a href="#" onclick="switchAuthView('login');return false;" style="font-weight:600;text-decoration:none">Sign In</a>
       </p>
-
-      <p style="font-size:11px;color:var(--tx2);text-align:center;margin:0">
-        New accounts are automatically assigned the Staff role.
-      </p>
-
+      <p style="font-size:11px;color:var(--tx2);text-align:center;margin:0">New accounts are automatically assigned the Staff role.</p>
     </div>
-
   </div>
 </div>
 
 <!-- APP SHELL -->
 <div id="app" style="display:none">
-  <nav class="sidebar" id="sidebar">
-    <div style="padding:20px 16px 10px;border-bottom:1px solid rgba(255,255,255,.1)">
-      <div style="font-size:22px">🌿</div>
-      <div style="font-size:15px;font-weight:700;color:#fff;margin-top:4px">FoodTrack</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px" id="user-label"></div>
+  <nav class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 4c-8 0-13 3.8-13 10a6 6 0 0 0 6 6c6.2 0 7-8 7-16Z"/><path d="M4 21c2-5 5-8 10-11"/></svg>
+      </span>
+      <span class="brand-copy">
+        <span style="display:block;font-size:16px;font-weight:650;color:#fff">FoodTrack</span>
+        <span style="display:block;font-size:11px;color:rgba(255,255,255,.56);margin-top:1px">Food management</span>
+      </span>
     </div>
-    <div style="flex:1;padding:12px 0">
-      <a onclick="nav('dashboard')" id="nav-dashboard">📊 Dashboard</a>
-      <a onclick="nav('inventory')" id="nav-inventory">🥦 Inventory</a>
-      <a onclick="nav('wastelog')" id="nav-wastelog">🗑️ Waste Log</a>
-      <a onclick="nav('reports')" id="nav-reports">📈 Reports</a>
-      <a onclick="nav('donation')" id="nav-donation">🤝 Donate</a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Workspace</div>
+      <a onclick="nav('dashboard')" id="nav-dashboard"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Dashboard</span></a>
+      <a onclick="nav('inventory')" id="nav-inventory"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1 13H5L4 7Z"/><path d="M9 7a3 3 0 0 1 6 0M3 7h18"/></svg><span>Food Inventory</span></a>
+      <a onclick="nav('wastelog')" id="nav-wastelog"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M5 7l1 14h12l1-14M9 7V4h6v3"/></svg><span>Waste Log</span></a>
+      <a onclick="nav('reports')" id="nav-reports"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h17"/><path d="m7 15 4-4 3 2 6-7"/></svg><span>Reports</span></a>
+      <a onclick="nav('donation')" id="nav-donation"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.6c0 5.3-8.8 11-8.8 11s-8.8-5.7-8.8-11A4.6 4.6 0 0 1 12 6.4a4.6 4.6 0 0 1 8.8 2.2Z"/><path d="M7.5 12h3l1.5-2.5 2 5 1.5-2.5h2"/></svg><span>Donation Alerts</span></a>
     </div>
-    <div style="padding:12px 10px;border-top:1px solid rgba(255,255,255,.1)">
-      <a onclick="doLogout()" style="color:rgba(255,165,0,.8)">🔓 Logout</a>
+    <div class="sidebar-user">
+      <span class="avatar" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span>
+      <span style="flex:1;min-width:0">
+        <span style="display:block;font-size:12px;color:rgba(255,255,255,.48)">Signed in as</span>
+        <span id="user-label" style="display:block;font-size:13px;font-weight:600;color:#fff"></span>
+      </span>
+    </div>
+    <div style="padding:4px 0 14px">
+      <a onclick="doLogout()" class="logout-link"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5m5 5H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></svg><span>Log out</span></a>
     </div>
   </nav>
+  <button class="sidebar-scrim" id="sidebar-scrim" aria-label="Close navigation" onclick="toggleSidebar(false)"></button>
   <main class="main">
+    <div class="mobile-topbar">
+      <button class="btn-ghost" style="padding:7px" aria-label="Open navigation" onclick="toggleSidebar()"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <strong style="font-size:15px;color:#14532d">FoodTrack</strong>
+    </div>
     <div id="page"></div>
   </main>
 </div>
@@ -142,22 +117,22 @@
 </div>
 
 <div id="toast"></div>
-  <!-- Supabase -->
+<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
 <script src="js/storage.js?v=1"></script>
 
-  <!-- Application scripts are loaded in dependency order. -->
-  <script src="js/core.js"></script>
-  <script src="js/seed-data.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/dashboard.js?v=2"></script>
-  <script src="js/inventory.js?v=4"></script>
-  <script src="js/waste-log.js?v=2"></script>
-  <script src="js/reports.js?v=2"></script>
-  <script src="js/donation.js?v=2"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/boot.js"></script>
+<!-- Application scripts are loaded in dependency order. -->
+<script src="js/core.js"></script>
+<script src="js/seed-data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/dashboard.js?v=2"></script>
+<script src="js/inventory.js?v=4"></script>
+<script src="js/waste-log.js?v=2"></script>
+<script src="js/reports.js?v=2"></script>
+<script src="js/donation.js?v=2"></script>
+<script src="js/ui.js"></script>
+<script src="js/boot.js"></script>
 </body>
 </html>

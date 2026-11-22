@@ -98,7 +98,7 @@ async function renderDashboard() {
 
         $('page').innerHTML = `
 
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+        <div class="page-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
 
             <div>
 
@@ -126,7 +126,7 @@ async function renderDashboard() {
 
 
             <div class="stat-card">
-                <span style="font-size:28px">📦</span>
+                <span class="stat-icon">${svgIcon('package')}</span>
 
                 <span style="font-size:28px;font-weight:700">
                     ${items.length}
@@ -139,7 +139,7 @@ async function renderDashboard() {
 
 
             <div class="stat-card">
-                <span style="font-size:28px">🔴</span>
+                <span class="stat-icon danger">${svgIcon('alert')}</span>
 
                 <span style="font-size:28px;font-weight:700;color:#dc2626">
                     ${expired}
@@ -152,7 +152,7 @@ async function renderDashboard() {
 
 
             <div class="stat-card">
-                <span style="font-size:28px">⚠️</span>
+                <span class="stat-icon warning">${svgIcon('alert')}</span>
 
                 <span style="font-size:28px;font-weight:700;color:#ea580c">
                     ${critical}
@@ -165,7 +165,7 @@ async function renderDashboard() {
 
 
             <div class="stat-card">
-                <span style="font-size:28px">💸</span>
+                <span class="stat-icon">${svgIcon('money')}</span>
 
                 <span style="font-size:28px;font-weight:700;color:#dc2626">
                     ₹${totalCost.toLocaleString('en-IN')}
@@ -183,9 +183,9 @@ async function renderDashboard() {
 
         ${expired + critical > 0 ? `
 
-            <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:14px;color:#991b1b;font-weight:500">
+            <div class="expiry-alert" style="background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:14px;color:#991b1b;font-weight:500">
 
-                ⚠️ ${expired} item(s) expired and ${critical} expiring within 3 days — take action!
+                ${svgIcon('alert')} ${expired} item(s) expired and ${critical} expiring within 3 days — take action!
 
             </div>
 

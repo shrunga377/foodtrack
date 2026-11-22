@@ -117,7 +117,7 @@ async function renderDonation() {
 
             <div class="card" style="text-align:center;padding:40px">
 
-                <p style="font-size:48px;margin:0">🎉</p>
+                <p class="empty-state-icon">${svgIcon('check')}</p>
 
                 <p style="font-weight:600;margin:12px 0 4px">
                     No urgent donation alerts right now
@@ -139,7 +139,7 @@ async function renderDonation() {
                     <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:14px 16px;margin-bottom:16px">
 
                         <strong style="color:#9a3412">
-                            🚨 Expires Today / Tomorrow — Donate Immediately!
+                            ${svgIcon('alert')} Expires Today / Tomorrow — Donate Immediately
                         </strong>
 
                         <div style="overflow-x:auto">
@@ -192,7 +192,7 @@ async function renderDonation() {
                     <div>
 
                         <strong style="color:#92400e">
-                            ⚠️ Expiring in 2–3 Days — Plan Donation Soon
+                            ${svgIcon('alert')} Expiring in 2–3 Days — Plan Donation Soon
                         </strong>
 
                         <div style="overflow-x:auto">
@@ -249,7 +249,7 @@ async function renderDonation() {
         <div class="card">
 
             <h3 style="font-size:16px;font-weight:600;margin:0 0 16px">
-                📋 NGO Contacts — Bengaluru & Pan-India
+                ${svgIcon('heart')} NGO Contacts — Bengaluru & Pan-India
             </h3>
 
 
@@ -269,14 +269,14 @@ async function renderDonation() {
                         </div>
 
                         <div style="font-size:12px;color:var(--tx2);margin-bottom:6px">
-                            📍 ${donationEscape(ngo.area)}
+                            ${svgIcon('pin')} ${donationEscape(ngo.area)}
                         </div>
 
                         <a
                             href="tel:${donationEscape(ngo.phone)}"
                             style="font-size:14px;font-weight:600;color:#16a34a;text-decoration:none">
 
-                            📞 ${donationEscape(ngo.phone)}
+                            ${svgIcon('phone')} ${donationEscape(ngo.phone)}
 
                         </a>
 

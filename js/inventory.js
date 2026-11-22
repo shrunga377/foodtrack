@@ -156,13 +156,13 @@ function renderInventoryView() {
 
     $('page').innerHTML = `
 
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+    <div class="page-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
 
         <h2 style="font-size:22px;font-weight:700;margin:0">
             Food Inventory
         </h2>
 
-        <div style="display:flex;gap:10px;align-items:center">
+        <div class="inventory-actions" style="display:flex;gap:10px;align-items:center">
 
             <input
                 type="search"
@@ -277,7 +277,7 @@ function renderInventoryView() {
                                         "
                                     >
 
-                                        📄 View Receipt
+                                        ${svgIcon('file')} View Receipt
 
                                     </a>
 
@@ -652,7 +652,7 @@ function showItemModal(item = null) {
                         "
                     >
 
-                        📄 View Existing Receipt
+                        ${svgIcon('file')} View Existing Receipt
 
                     </a>
 

@@ -48,7 +48,7 @@ async function renderWastelog() {
 
         $('page').innerHTML = `
 
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+        <div class="page-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
 
             <div>
                 <h2 style="font-size:22px;font-weight:700;margin:0">
@@ -64,7 +64,7 @@ async function renderWastelog() {
             </div>
 
             <button class="btn-primary" onclick="showWasteModal()">
-                + Log Waste
+                + Add Waste
             </button>
 
         </div>
@@ -120,7 +120,7 @@ async function renderWastelog() {
                                         <button
                                             class="btn-danger"
                                             onclick="delWaste('${w.id}')">
-                                            Del
+                                            Delete
                                         </button>
                                     </td>
                                 ` : ''}
